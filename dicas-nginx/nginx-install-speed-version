@@ -1,0 +1,17 @@
+
+
+ https://github.com/Levantado/ngx_pagespeed-install-script/releases/download/1a/page-speed.sh 
+bash page-speed.sh
+
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
+
+--simple nginx install
+
+sudo apt-get install nginx
+
+sudo service nginx restart
+
+--trouble nginx?
+
+nginx -t

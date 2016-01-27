@@ -1,0 +1,10 @@
+git clone https://github.com/c9/templates.git
+cd templates/workspace
+
+// Instalar docker
+
+
+
+
+
+docker build

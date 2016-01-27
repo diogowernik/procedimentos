@@ -1,0 +1,40 @@
+
+16
+down vote
+accepted
+Okay, I made it. How I made it for debian squeeze with nginx server: (all commands I execute from root user)
+
+First of all you need to install sendmail
+
+apt-get install sendmail
+next, you must configure this file that was easier than I thought
+
+sendmailconfig 
+okay, next step that I make was a php.ini configuration (I'm not a great admin, I'm a beginner, so I don't know is it necessary or not.)
+
+I set
+
+sendmail_path= /usr/sbin/sendmail -t -i
+Okay, from this moment, theoretically, you can send email, but for my case it led to 504 http error gateway time-out. But as I found much later the email already came to email box. So, my test php file is:
+
+<?php 
+   mail('myWorkingEmail@example.com', 'test', 'you done that');
+   echo 'ok'; // I use this to check that script is end the execution 
+?>
+That's pretty clear.
+
+Next problem is 504 error. I go to the log files
+
+nano /var/log/mail.log
+and here i find this error (that not the only one error, but that one is responsible for 504 error):
+
+sm-msp-queue[***]: My unqualified host name (myhostname) unknown; sleeping for retry
+Then, to find how I can solve this trouble: http://forums.fedoraforum.org/archive/index.php/t-85365.html last comment on that page.
+
+Or another words I made this:
+
+nano /etc/hosts
+and in that file I change the order of the hosts
+
+127.0.0.1 my_ip localhost myhostname 
+save, done. open your test php file, there is no any 504 error and emails is income to email you mention in mail function. As I say, I'm a novice, and that may not work for you, but it work for me anyhow. This is not the end configuration, of course. Hope you find it helpful.

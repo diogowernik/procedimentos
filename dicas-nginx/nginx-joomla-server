@@ -1,0 +1,55 @@
+server {
+
+    listen 80;
+    server_name joomla.brasilia.io;
+    server_name_in_redirect off;
+
+    root /home/joomla;
+    index index.php index.html index.htm;
+    
+    gzip on;
+    gzip_http_version 1.1;
+    gzip_comp_level 6;
+    gzip_min_length 1100;
+    gzip_buffers 4 8k;
+    gzip_types text/plain application/xhtml+xml text/css application/xml application/xml+rss text/javascript application/javascript application/x-javascript
+    gzip_proxied     any;
+    gzip_disable     "MSIE [1-6]\.";
+    
+    # deny running scripts inside writable directories
+    location ~* /(images|cache|media|logs|tmp)/.*\.(php|pl|py|jsp|asp|sh|cgi)$ {
+            return 403;
+            error_page 403 /403_error.html;
+    }
+
+    # Support Clean (aka Search Engine Friendly) URLs
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+         root /home/joomla;
+    }
+    
+    
+    # caching of files 
+    location ~* \.(ico|pdf|flv)$ {
+            expires 1y;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|swf|xml|txt|woff)$ {
+            expires 14d;
+    }
+
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}

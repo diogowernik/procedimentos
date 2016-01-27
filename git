@@ -1,0 +1,22 @@
+Instlar git
+
+apt-get install git
+
+Salvar git
+
+git status
+
+git init
+
+git add -A .
+
+
+git config --global user.email "diogowernik@gmail.com"
+git config --global user.email "diogowernk"
+
+
+touch .gitignore
+
+git log
+
+git reset --hard HEAD

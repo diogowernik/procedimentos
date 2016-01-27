@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    client_max_body_size 100m;
+    server_name yoga.brasilia.io;
+    access_log /var/log/nginx/yoga.brasilia.io.access.log;
+    location / {
+        proxy_pass          http://127.0.0.1:8083/;
+    }
+}
