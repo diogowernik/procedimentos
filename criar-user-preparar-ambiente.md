@@ -9,7 +9,7 @@ Create the SSH directory with the ssh command:
 
 Use the scp command to copy the key:
 
-    scp ~/.ssh/id_rsa.pub diogowernik@159.203.44.1:~/.ssh/authorized_keys
+    scp ~/.ssh/authorized_keys username@159.203.44.1:~/.ssh/authorized_keys
 
 how do i disable the password login for the user and only auth on the ssh key.
 
