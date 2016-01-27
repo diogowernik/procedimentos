@@ -1,25 +1,25 @@
-Criar novo user:
+Dicas como criar novo user no ubuntu, como assinar a chave ssh para conectar com C9 e instalar utilizar o ruby:
 
-sudo adduser diogowernik
+    sudo adduser username
 
 
 Create the SSH directory with the ssh command:
 
-ssh diogowernik@159.203.44.1 'mkdir -p ~/.ssh'
+    ssh username@159.203.44.1 'mkdir -p ~/.ssh'
 
 Use the scp command to copy the key:
 
-scp ~/.ssh/id_rsa.pub diogowernik@159.203.44.1:~/.ssh/authorized_keys
+    scp ~/.ssh/id_rsa.pub diogowernik@159.203.44.1:~/.ssh/authorized_keys
 
-    how do i disable the password login for the user and only auth on the ssh key.
+how do i disable the password login for the user and only auth on the ssh key.
 
-Edit the /etc/ssh/sshd_config file, find
+    /etc/ssh/sshd_config
 
-PasswordAuthentication yes
+    PasswordAuthentication yes
 
-and set it to no.
+    and set it to no.
 
-na pasta home/diogowernik/.ssh/authorized_keys copiar a chave do digitalocean lá.
+na pasta home/username/.ssh/authorized_keys copiar a chave do cloud9 lá.
 
 
 ------
