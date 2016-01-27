@@ -24,11 +24,16 @@ na pasta home/username/.ssh/authorized_keys copiar a chave do cloud9 lá.
 
 ------
 
-ruby -v ok
-gems -v ok
+Para usar ruby como outro user que não o root:
 
-usar sudo para as coisas
+    ruby -v
 
-sudo apt-get install ruby-dev
-sudo gem install rails-api
-sudo gem install bundler
+    gems -v
+
+E depois usar sudo para as coisas, é possível configurar para não usar o sudo mais, mas tenho que pesquisar como
+
+    sudo apt-get install ruby-dev
+
+    sudo gem install rails-api
+
+    sudo gem install bundler
