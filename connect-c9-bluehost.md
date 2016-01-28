@@ -1,7 +1,7 @@
 How to connect bluehost shared server with C9 ide.
 
 
-Is neede some steps:
+Is needed some steps:
 
 1) Connect with your bluehost account via terminal
 
