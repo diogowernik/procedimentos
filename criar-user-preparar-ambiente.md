@@ -1,25 +1,38 @@
 Dicas como criar novo user no ubuntu, como assinar a chave ssh para conectar com C9 e instalar utilizar o ruby:
 
     sudo adduser username
+    visudo
+    
+add
+
+    username ALL=(ALL:ALL) ALL
+
+ctrl + X
+Y
+
+Create a file in the folder root/.ssh
+
+    id_rsa.pub
+    paste de big number in this file
 
 
 Create the SSH directory with the ssh command:
 
-    ssh username@159.203.44.1 'mkdir -p ~/.ssh'
+    ssh username@159.203.20.2 'mkdir -p ~/.ssh'
 
 Use the scp command to copy the key:
 
-    scp ~/.ssh/authorized_keys username@159.203.44.1:~/.ssh/authorized_keys
+    scp ~/.ssh/id_rsa.pub username@159.203.20.2:~/.ssh/authorized_keys
 
-how do i disable the password login for the user and only auth on the ssh key.
+# how do i disable the password login for the user and only auth on the ssh key.
 
-    /etc/ssh/sshd_config
+# /etc/ssh/sshd_config
 
-    PasswordAuthentication yes
+# PasswordAuthentication yes
 
-    and set it to no.
+# and set it to no.
 
-na pasta home/username/.ssh/authorized_keys copiar a chave do cloud9 lá.
+# na pasta home/username/.ssh/authorized_keys copiar a chave do cloud9 lá.
 
 
 ------
