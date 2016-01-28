@@ -24,18 +24,7 @@ Use the scp command to copy the key:
 
     scp ~/.ssh/id_rsa.pub username@159.203.20.2:~/.ssh/authorized_keys
 
-# how do i disable the password login for the user and only auth on the ssh key.
 
-# /etc/ssh/sshd_config
-
-# PasswordAuthentication yes
-
-# and set it to no.
-
-# na pasta home/username/.ssh/authorized_keys copiar a chave do cloud9 lá.
-
-
-------
 
 Para usar ruby como outro user que não o root:
 
