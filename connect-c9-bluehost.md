@@ -5,14 +5,14 @@ Is needed some steps:
 
 1) Connect with your bluehost account via terminal
 
-2) Create ssh folder and insert the data from your c9 account, the big number.
+2) Create ssh folder and insert the data from your c9 account
 
     ssh yourusername@yousite.com 'mkdir -p ~/.ssh'
 
-3) Go to you file manager, in you cpanel, have show hidden files on
+3) Go to you file manager, in your cpanel, with show hidden files on
 find the folder .ssh/
 
-Create a file:
+Inside this folder create a file:
 
     authorized_keys
 
