@@ -14,3 +14,9 @@ sudo chown -R www-data:www-data .
 // enviar email
 
 apt-get install sendmail
+
+
+
+// buscar "virus":
+
+grep -r jquery.min.php | awk -F\: '{ print $1 }'
