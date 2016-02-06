@@ -1,6 +1,7 @@
 Dicas como criar novo user no ubuntu, como assinar a chave ssh para conectar com C9 e instalar utilizar o ruby:
 
     sudo adduser username
+    
     visudo
     
 add
