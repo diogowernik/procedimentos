@@ -1,4 +1,4 @@
-Para api authenticação baseado em token
+- Para api authenticação baseado em token
 
 Adicionar as gems:
 
@@ -17,8 +17,14 @@ Criar controller
 
     rails g scaffold_controller User
 
-Ferramenta para analise de codigo
+inserir em app/controller/users_controller.rb
 
-  Estatica
+    before_action :authenticate_user!, :except => [:show, :index]
+    
+- Ferramenta para analise de codigo
 
-  Execução
+  Estatica ou Execução
+
+    gem 'rubocop', '~> 0.37.2', require: false
+ 
+ 
