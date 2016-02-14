@@ -14,6 +14,7 @@ Delete test folder, because we are going to use rspec for tests
 Edit gem file, installing all gems for the api:
 
 Gems devise_token_auth e omniauth (for authentication)
+
 Gems rspec (for tests) and rubocop (for code quality verification)
 
     gem 'devise_token_auth'
