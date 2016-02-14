@@ -60,7 +60,7 @@ Insert .rubocop.yml na raiz do projeto
     Style/BlockDelimiters:
       Enabled: false
 
-First Commit with github
+First Commit with git
 
     git init
     git add -A .
