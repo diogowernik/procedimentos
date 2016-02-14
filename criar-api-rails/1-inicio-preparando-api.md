@@ -1,11 +1,11 @@
 Tutorial
 
-Instalando gem rails-api
+Install gem rails-api
 
     gem install rails-api
 
 
-Creating rails-api
+Create rails-api
 
     rails-api new simple-api
     
@@ -30,7 +30,7 @@ On teminal
     bundle install
     rake db:migrate
 
-Inserir .rubocop.yml na raiz do projeto
+Insert .rubocop.yml na raiz do projeto
 
     # This is the configuration used to check the rubocop source code.
     # Check out: https://github.com/bbatsov/rubocop
@@ -47,6 +47,7 @@ Inserir .rubocop.yml na raiz do projeto
         - 'db/seeds.rb'
         - 'client/node_modules/**/*'
         - 'bin/**/*'
+        - 'config/initializers/secret_token.rb'
         - !ruby/regexp /old_and_unused\.rb$/
         
     Metrics/LineLength:
@@ -57,3 +58,9 @@ Inserir .rubocop.yml na raiz do projeto
 
     Style/BlockDelimiters:
       Enabled: false
+
+First Commit with github
+
+    git init
+    git add -A .
+    git commit -m "Project Start"

@@ -1,22 +1,4 @@
 
-Tutorial
-
-Instalando gem rails-api
-
-    gem install rails-api
-
-
-Creating rails-api
-
-    rails-api new my-api
-
-
-Install rspec and rubocop, in gem file add
-
-    group :development, :test do
-      gem 'rspec-rails', '~> 3.0'
-      gem 'rubocop', '~> 0.37.2', require: false
-    end
 
 Generate model and controller for profile
 
