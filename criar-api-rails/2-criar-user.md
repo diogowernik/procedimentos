@@ -1,19 +1,19 @@
-Creating Users
---------------
+## Creating Users
 
-### 1 - Create Model for users
-
-Create users model and url address auth/
+### 1 - Create Model for users using devise token auth
 
 ```ruby
-    rails g devise_token_auth:install User auth
+rails g devise_token_auth:install User auth
 ```
-Edit migrate file, on line 37, delete:
+
+**db/migrate/___create_users.db**
+
+on line 37, delete:
 
 ```ruby
-    t.string :name
-    t.string :nickname
-    t.string :image
+t.string :name
+t.string :nickname
+t.string :image
 ```
 
 Install the migrate generated
@@ -22,8 +22,10 @@ Install the migrate generated
 
 In the folder:
 
-app/model/user.rb align the paramters and for tests comment the confirmable config!
-(so we dont need to confirm email for tests):
+**app/model/user.rb** 
+
+align the paramters and for tests comment the confirmable config.
+(so we dont need to confirm email for tests at this moment)
 
 ```ruby
 # , :confirmable
@@ -31,11 +33,9 @@ app/model/user.rb align the paramters and for tests comment the confirmable conf
 
 ### Create controllers for users
 
-Criar controller
-
     rails g scaffold_controller User
 
-edit app/controller/users_controller.rb
+**app/controller/users_controller.rb**
 
 - add that for authentication:
 
@@ -58,7 +58,7 @@ before_action :authenticate_user!, except: [:show, :index]
   end
 ```
 
-- change the end for:
+- change the def user_params, last lines
 
 ```ruby
 def user_params
@@ -68,6 +68,8 @@ end
 
 ### Set the routes
 
-edit config/routes.rb
+**config/routes.rb**
 
-    resources :users
+```ruby
+resources :users
+```
