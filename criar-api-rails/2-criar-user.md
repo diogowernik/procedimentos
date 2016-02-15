@@ -40,26 +40,26 @@ before_action :authenticate_user!, except: [:show, :index]
 
 2. delete post, that will be managed from devise_token_auth
 
-
-      # POST /users
-      # POST /users.json
-      def create
-        @user = User.new(user_params)
-        if @user.save
-          render json: @user, status: :created, location: @user
-        else
-          render json: @user.errors, status: :unprocessable_entity
-        end
-      end
-
+```ruby
+  # POST /users
+  # POST /users.json
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      render json: @user, status: :created, location: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+```
 
 3. change the end for:
 
-
-      def user_params
-        params.require(:user).permit(:email)
-      end
-
+```ruby
+def user_params
+params.require(:user).permit(:email)
+end
+```
 
 ### Set the routes
 

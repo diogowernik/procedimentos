@@ -18,6 +18,7 @@ Gems devise_token_auth e omniauth (for authentication)
 
 Gems rspec (for tests) and rubocop (for code quality verification)
 
+```ruby
     gem 'devise_token_auth'
 
     gem 'omniauth'
@@ -26,6 +27,7 @@ Gems rspec (for tests) and rubocop (for code quality verification)
       gem 'rspec-rails', '~> 3.0'
       gem 'rubocop', '~> 0.37.2', require: false
     end
+```
 
 On teminal
 
