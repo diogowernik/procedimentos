@@ -60,6 +60,21 @@ Insert .rubocop.yml na raiz do projeto
     Style/BlockDelimiters:
       Enabled: false
 
+    Style/StringLiterals:
+      Enabled: false
+      
+    Style/SymbolArray:
+      Enabled: true
+
+Gerar rpec 
+
+    rails generate rspec:install
+
+Test all
+
+    rspec
+    rubocop
+
 First Commit with git
 
     git init
