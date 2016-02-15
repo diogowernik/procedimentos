@@ -5,13 +5,16 @@ Creating Users
 
 Create users model and url address auth/
 
+```ruby
     rails g devise_token_auth:install User auth
-    
+```
 Edit migrate file, on line 37, delete:
 
+```ruby
     t.string :name
     t.string :nickname
     t.string :image
+```
 
 Install the migrate generated
 
@@ -22,7 +25,9 @@ In the folder:
 app/model/user.rb align the paramters and for tests comment the confirmable config!
 (so we dont need to confirm email for tests):
 
-    :confirmable,
+```ruby
+# , :confirmable
+```
 
 ### Create controllers for users
 
@@ -32,13 +37,13 @@ Criar controller
 
 edit app/controller/users_controller.rb
 
-1. add that for authentication:
+- add that for authentication:
 
 ```ruby
 before_action :authenticate_user!, except: [:show, :index]
 ```
 
-2. delete post, that will be managed from devise_token_auth
+- delete post, that will be managed from devise_token_auth
 
 ```ruby
   # POST /users
@@ -53,7 +58,7 @@ before_action :authenticate_user!, except: [:show, :index]
   end
 ```
 
-3. change the end for:
+- change the end for:
 
 ```ruby
 def user_params
