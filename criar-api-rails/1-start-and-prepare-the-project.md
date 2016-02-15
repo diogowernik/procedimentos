@@ -1,5 +1,4 @@
-Inicio e preparo do projeto
-----------------------------
+## 1 - Start and Prepare the project.
 
 Install gem rails-api
 
@@ -12,11 +11,10 @@ Create rails-api
     
 Delete test folder, because we are going to use rspec for tests
 
-Edit gem file, installing all gems for the api:
+**Gemfile**
 
-Gems devise_token_auth e omniauth (for authentication)
+Edit gem file, installing gems for the api:
 
-Gems rspec (for tests) and rubocop (for code quality verification)
 
 ```ruby
     gem 'devise_token_auth'
@@ -36,6 +34,7 @@ On teminal
 
 Insert .rubocop.yml na raiz do projeto
 
+```ruby
     # This is the configuration used to check the rubocop source code.
     # Check out: https://github.com/bbatsov/rubocop
 
@@ -68,6 +67,7 @@ Insert .rubocop.yml na raiz do projeto
       
     Style/SymbolArray:
       Enabled: true
+```
 
 Gerar rpec 
 

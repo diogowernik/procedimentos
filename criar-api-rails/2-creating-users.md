@@ -1,10 +1,10 @@
-## Creating Users
+## 2 - Creating Users
 
-### 1 - Create Model for users using devise token auth
+### Create Model for users using devise token auth
 
-```ruby
-rails g devise_token_auth:install User auth
-```
+
+    rails g devise_token_auth:install User auth
+
 
 **db/migrate/___create_users.db**
 
