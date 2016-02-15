@@ -34,9 +34,9 @@ edit app/controller/users_controller.rb
 
 1. add that for authentication:
 
-
-    before_action :authenticate_user!, except: [:show, :index]
-
+```ruby
+before_action :authenticate_user!, except: [:show, :index]
+```
 
 2. delete post, that will be managed from devise_token_auth
 
