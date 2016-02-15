@@ -32,7 +32,7 @@ On teminal
     bundle install
     rake db:migrate
 
-Insert .rubocop.yml na raiz do projeto
+Insert .rubocop.yml in the project root
 
 ```ruby
     # This is the configuration used to check the rubocop source code.
@@ -66,7 +66,7 @@ Insert .rubocop.yml na raiz do projeto
       Enabled: false
       
     Style/SymbolArray:
-      Enabled: true
+      Enabled: false
 ```
 
 Gerar rpec 
