@@ -1,6 +1,7 @@
 Creating Users
+--------------
 
-- 1 - Create Model for users
+### 1 - Create Model for users
 
 Create users model and url address auth/
 
@@ -22,7 +23,7 @@ app/model/user.rb align the paramters and delete for now (so we dont need to con
 
     :confirmable,
 
-# Create controllers for users
+### Create controllers for users
 
 Criar controller
 
