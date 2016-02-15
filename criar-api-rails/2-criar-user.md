@@ -19,7 +19,8 @@ Install the migrate generated
 
 In the folder:
 
-app/model/user.rb align the paramters and delete for now (so we dont need to confirm email for tests):
+app/model/user.rb align the paramters and for tests comment the confirmable config!
+(so we dont need to confirm email for tests):
 
     :confirmable,
 
@@ -29,16 +30,39 @@ Criar controller
 
     rails g scaffold_controller User
 
-inserir em app/controller/users_controller.rb
+edit app/controller/users_controller.rb
+
+1. add that for authentication:
+
 
     before_action :authenticate_user!, except: [:show, :index]
 
-check with rubocop the code.
 
-    rubocop
+2. delete post, that will be managed from devise_token_auth
 
-Update your entire project to Ruby 1.9 hash syntax 
-http://effectif.com/ruby/update-your-project-for-ruby-19-hash-syntax
 
-    find . -name \*.rb -exec perl -p -i -e 's/([^:]):(\w+)\s*=>/\1\2:/g' {} \;
+      # POST /users
+      # POST /users.json
+      def create
+        @user = User.new(user_params)
+        if @user.save
+          render json: @user, status: :created, location: @user
+        else
+          render json: @user.errors, status: :unprocessable_entity
+        end
+      end
 
+
+3. change the end for:
+
+
+      def user_params
+        params.require(:user).permit(:email)
+      end
+
+
+### Set the routes
+
+edit config/routes.rb
+
+    resources :users
