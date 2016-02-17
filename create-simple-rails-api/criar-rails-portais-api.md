@@ -1,34 +1,3 @@
-
-
-Generate model and controller for profile
-
-
-    rails generate model profile name:string description:text site_url:string state:string
-
-    rails g scaffold_controller Profile
-
-For profile this are the fields created now:
-
-+ name: :string
-+ description: :text
-+ site_url: :string
-+ state: :string
-
-
------
-
-need to delete models
-
-    rails destroy model membership
-    
-need to delete db data
-
-    Membership.delete_all
-
-tips on boolean do not use validate
-
------
-
 1) Generate model and controller for membership
 
     rails generate model membership plan:string start_date:date finish_date:date active:boolean price:float trial_active:boolean trial_duration:integer
@@ -82,6 +51,9 @@ delete because is for rails not needed for rails-api:
     end
     
 4) membership_spec.rb
+
+
+
 
     describe 'is valid when' do
     it 'have all data' do

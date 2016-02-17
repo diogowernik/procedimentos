@@ -7,7 +7,6 @@ Comandos e dicas AirAlien
 Inserir novas gems no gemfile
 
     gem 'bootstrap-sass', '~> 3.3.5'
-    gem 'sass-rails', '>= 3.2'
     gem 'devise'
     gem 'omniauth'
     gem 'omniauth-facebook'
@@ -39,11 +38,11 @@ Criar estrutura banco de dados
     
 Editar manualmente:
 
-config/environments/development.rb
+**config/environments/development.rb**
 
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-app/views/layouts/application.html.erb.
+**app/views/layouts/application.html.erb**
 
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>   
