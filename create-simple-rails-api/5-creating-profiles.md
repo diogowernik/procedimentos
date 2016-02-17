@@ -2,12 +2,6 @@
 
 ### Generate model and controller for profile
 
-**terminal**
-
-    rails generate model profile name:string description:text site_url:string state:string
-
-    rails g scaffold_controller Profile
-
 For profile this are the fields created for the moment:
 
 ```ruby
@@ -17,9 +11,25 @@ site_url:string
 state:string
 ```
 
-**config/routes.rb**   
+**terminal**
 
-    resources :profiles
+    rails generate model profile name:string description:text site_url:string state:string
+
+    rails g scaffold_controller Profile
+
+**db/____create_profiles**
+
+Say that the profile belongs_to user
+
+```ruby
+t.belongs_to :user, index: true
+```
+
+**config/routes.rb**  
+
+```ruby
+resources :profiles
+```
 
 **app/controllers/profile_controller.rb**
 
@@ -114,3 +124,11 @@ class ProfilesController < ApplicationController
   end
 end
 ```
+
+db install:
+
+    rake db:migrate
+
+Run rspec to check the app
+
+    rspec
