@@ -31,6 +31,14 @@ t.belongs_to :user, index: true
 resources :profiles
 ```
 
+**app/models/profile.rb**
+
+```ruby
+validates :name, presence: true
+validates :description, presence: true
+```
+
+
 **app/controllers/profile_controller.rb**
 
 delete because is for rails full application, not needed for only rails-api:
