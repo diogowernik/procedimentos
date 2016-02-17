@@ -36,29 +36,29 @@ resources :profiles
 delete because is for rails full application, not needed for only rails-api:
 
 ```ruby
-    describe "GET #new" do
-    (...)
-    end
+describe "GET #new" do
+(...)
+end
 
-    describe "GET #new" do
-    (...)
-    end
+describe "GET #new" do
+(...)
+end
 
-    describe "GET #edit" do
-    (...)
-    end
+describe "GET #edit" do
+(...)
+end
 
-    it "redirects to the created membership" do
-    (...)
-    end
-      
-    it "re-renders the 'new' template" do
-    (...)
-    end
+it "redirects to the created membership" do
+(...)
+end
+  
+it "re-renders the 'new' template" do
+(...)
+end
 
-    it "re-renders the 'edit' template" do
-    (...)
-    end
+it "re-renders the 'edit' template" do
+(...)
+end
 ```
 
 It will be like that:

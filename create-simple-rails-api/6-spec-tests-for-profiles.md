@@ -2,9 +2,9 @@
 
 **spec/controllers/profiles_controller_spec.rb**
 
+```ruby
 require 'rails_helper'
 
-```
 RSpec.describe ProfilesController, type: :controller do
   let(:valid_attributes) {
     { description: 'I\'m not batman!', name: 'Bruce Waine' }
