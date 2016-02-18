@@ -17,27 +17,36 @@ state:string
 
     rails g scaffold_controller Profile
 
-**db/____create_profiles**
+set relation user and profile (in db)
 
-Say that the profile belongs_to user
+**db/migrate/____create_profiles**
 
 ```ruby
 t.belongs_to :user, index: true
 ```
+set relation user and profile and valitations (in models), can be has_one or has_many
 
-**config/routes.rb**  
+**app/models/user.rb**
 
 ```ruby
-resources :profiles
+has_one :profile
 ```
 
 **app/models/profile.rb**
 
 ```ruby
+belongs_to :user
+```
+
+```ruby
 validates :name, presence: true
 validates :description, presence: true
 ```
+**config/routes.rb**  
 
+```ruby
+resources :profiles
+```
 
 **app/controllers/profile_controller.rb**
 

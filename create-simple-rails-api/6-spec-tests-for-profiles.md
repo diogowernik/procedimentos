@@ -111,17 +111,17 @@ require 'rails_helper'
 RSpec.describe Profile, type: :model do
   describe 'is invalid when' do
     it 'do not have a name' do
-      Profile.create(description: 'Some description here ...')
+      Profile.create(description: 'I am batman ...')
       expect(Profile.count).to eql(0)
     end
     it 'do not have a description' do
-      Profile.create(name: 'Fulano de Tal')
+      Profile.create(name: 'Batman')
       expect(Profile.count).to eql(0)
     end
   end
   describe 'is valid when' do
     it 'have a name and a profile' do
-      Profile.create(description: 'Some description ...', name: 'Fulano')
+      Profile.create(description: 'I am Super Man ...', name: 'Super Man')
       expect(Profile.count).to eql(1)
     end
   end

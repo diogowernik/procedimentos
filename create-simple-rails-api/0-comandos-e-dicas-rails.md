@@ -11,7 +11,7 @@ need to delete db data
     rails c
     Profile.delete_all
 
-When working on validation controllers:
+When working on validation models:
 
     boolean do not use validate
 
