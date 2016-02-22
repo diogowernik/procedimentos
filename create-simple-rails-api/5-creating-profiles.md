@@ -41,6 +41,7 @@ belongs_to :user
 ```ruby
 validates :name, presence: true
 validates :description, presence: true
+validates :user, presence: true
 ```
 **config/routes.rb**  
 
@@ -77,6 +78,19 @@ it "re-renders the 'edit' template" do
 (...)
 end
 ```
+And change the params:
+
+```ruby
+  def profile_params
+    params.require(:profile).permit
+    (
+      :name,
+      :description
+      :user_id
+    )
+  end
+```
+
 
 It will be like that:
 
@@ -137,7 +151,12 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:name, :description)
+    params.require(:profile).permit
+    (
+      :name,
+      :description
+      :user_id
+    )
   end
 end
 ```
