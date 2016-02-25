@@ -56,85 +56,16 @@ And change the params:
 
 ```ruby
   def publication_params
-    params.require(:publication).permit
-    (
+    params.require(:publication).permit(
       :title,
-      :description
-      :type
+      :description,
+      :type,
       :profile_id
     )
   end
 ```
 
 
-It will be like that:
-
-```ruby
-class PublicationsController < ApplicationController
-  before_action :set_publication, only: [:show, :update, :destroy]
-
-  # GET /publications
-  # GET /publications.json
-  def index
-    @publications = Publication.all
-
-    render json: @publications
-  end
-
-  # GET /publications/1
-  # GET /publications/1.json
-  def show
-    render json: @publication
-  end
-
-  # POST /publications
-  # POST /publications.json
-  def create
-    @publication = Publication.new(publication_params)
-
-    if @publication.save
-      render json: @publication, status: :created, location: @publication
-    else
-      render json: @publication.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /publications/1
-  # PATCH/PUT /publications/1.json
-  def update
-    @publication = Publication.find(params[:id])
-
-    if @publication.update(publication_params)
-      head :no_content
-    else
-      render json: @publication.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /publications/1
-  # DELETE /publications/1.json
-  def destroy
-    @publication.destroy
-
-    head :no_content
-  end
-
-  private
-
-  def set_publication
-    @publication = Publication.find(params[:id])
-  end
-
-  def publication_params
-    params.require(:publication).permit
-    (
-      :name,
-      :description
-      :user_id
-    )
-  end
-end
-```
 
 **app/controllers/publication_controller_spec.rb**
 
