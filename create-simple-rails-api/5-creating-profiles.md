@@ -51,8 +51,15 @@ resources :profiles
 
 **app/controllers/profile_controller.rb**
 
+find:
 
-And change the params:
+```ruby
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+```
+
+And change for:
 
 ```ruby
   def profile_params
@@ -64,7 +71,7 @@ And change the params:
   end
 ```
 
-**app/controllers/profile_controller.rb**
+**spec/controllers/profile_controller.rb**
 
 delete because is for rails full application, not needed for only rails-api:
 
@@ -73,15 +80,11 @@ describe "GET #new" do
 (...)
 end
 
-describe "GET #new" do
-(...)
-end
-
 describe "GET #edit" do
 (...)
 end
 
-it "redirects to the created membership" do
+it "redirects to the created ..." do
 (...)
 end
   

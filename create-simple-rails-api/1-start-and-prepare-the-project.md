@@ -35,38 +35,38 @@ On teminal
 Insert .rubocop.yml in the project root
 
 ```ruby
-    # This is the configuration used to check the rubocop source code.
-    # Check out: https://github.com/bbatsov/rubocop
+# This is the configuration used to check the rubocop source code.
+# Check out: https://github.com/bbatsov/rubocop
 
-    AllCops:
-      Include:
-        - '**/Rakefile'
-        - '**/config.ru'
-      Exclude:
-        - 'vendor/**/*'
-        - 'spec/fixtures/**/*'
-        - 'db/**/*'
-        - 'db/schema.rb'
-        - 'db/seeds.rb'
-        - 'client/node_modules/**/*'
-        - 'bin/**/*'
-        - 'config/initializers/secret_token.rb'
-        - !ruby/regexp /old_and_unused\.rb$/
-        
-    Metrics/LineLength:
-      Max: 120
-      
-    Style/Documentation:
-      Enabled: false
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'db/**/*'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'client/node_modules/**/*'
+    - 'bin/**/*'
+    - 'config/initializers/secret_token.rb'
+    - !ruby/regexp /old_and_unused\.rb$/
+    
+Metrics/LineLength:
+  Max: 120
+  
+Style/Documentation:
+  Enabled: false
 
-    Style/BlockDelimiters:
-      Enabled: false
+Style/BlockDelimiters:
+  Enabled: false
 
-    Style/StringLiterals:
-      Enabled: false
-      
-    Style/SymbolArray:
-      Enabled: false
+Style/StringLiterals:
+  Enabled: false
+  
+Style/SymbolArray:
+  Enabled: false
 ```
 
 Gerar rpec 

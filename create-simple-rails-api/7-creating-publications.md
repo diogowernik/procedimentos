@@ -52,10 +52,19 @@ resources :publications
 
 **app/controllers/publication_controller.rb**
 
-And change the params:
+And change the def set params:
+
+find:
 
 ```ruby
-  def publication_params
+  def set_publication
+    @publication = Publication.find(params[:id])
+  end
+```
+And change for:  
+
+```ruby
+  def set_publication
     params.require(:publication).permit(
       :title,
       :description,
@@ -67,7 +76,7 @@ And change the params:
 
 
 
-**app/controllers/publication_controller_spec.rb**
+**spec/controllers/publication_controller_spec.rb**
 
 delete because is for rails full application, not needed for only rails-api:
 
@@ -76,15 +85,11 @@ describe "GET #new" do
 (...)
 end
 
-describe "GET #new" do
-(...)
-end
-
 describe "GET #edit" do
 (...)
 end
 
-it "redirects to the created membership" do
+it "redirects to the created ..." do
 (...)
 end
   
