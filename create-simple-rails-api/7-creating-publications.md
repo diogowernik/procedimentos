@@ -26,7 +26,7 @@ t.belongs_to :profile, index: true
 ```
 set relation publication and profile and valitations (in models), can be has_one or has_many
 
-**app/models/user.rb**
+**app/models/profile.rb**
 
 ```ruby
 has_many :publication
@@ -52,33 +52,6 @@ resources :publications
 
 **app/controllers/publication_controller.rb**
 
-delete because is for rails full application, not needed for only rails-api:
-
-```ruby
-describe "GET #new" do
-(...)
-end
-
-describe "GET #new" do
-(...)
-end
-
-describe "GET #edit" do
-(...)
-end
-
-it "redirects to the created membership" do
-(...)
-end
-  
-it "re-renders the 'new' template" do
-(...)
-end
-
-it "re-renders the 'edit' template" do
-(...)
-end
-```
 And change the params:
 
 ```ruby
@@ -162,6 +135,37 @@ class PublicationsController < ApplicationController
   end
 end
 ```
+
+**app/controllers/publication_controller_spec.rb**
+
+delete because is for rails full application, not needed for only rails-api:
+
+```ruby
+describe "GET #new" do
+(...)
+end
+
+describe "GET #new" do
+(...)
+end
+
+describe "GET #edit" do
+(...)
+end
+
+it "redirects to the created membership" do
+(...)
+end
+  
+it "re-renders the 'new' template" do
+(...)
+end
+
+it "re-renders the 'edit' template" do
+(...)
+end
+```
+
 
 db install:
 
