@@ -7,7 +7,15 @@ require 'rails_helper'
 
 RSpec.describe ProfilesController, type: :controller do
   let(:valid_attributes) {
-    { description: 'I\'m not batman!', name: 'Bruce Waine' }
+    batman = User.create(
+      email: 'batman@gothan.io',
+      password: 'Senha1234'
+    )
+    {
+      description: 'I\'m not batman!', 
+      name: 'Bruce Waine',
+      user_id: batman.id
+    }
   }
 
   let(:invalid_attributes) {
@@ -111,17 +119,25 @@ require 'rails_helper'
 RSpec.describe Profile, type: :model do
   describe 'is invalid when' do
     it 'do not have a name' do
-      Profile.create(description: 'I am batman ...')
+      Profile.create(description: 'Some description here ...')
       expect(Profile.count).to eql(0)
     end
     it 'do not have a description' do
-      Profile.create(name: 'Batman')
+      Profile.create(name: 'Fulano de Tal')
       expect(Profile.count).to eql(0)
     end
   end
   describe 'is valid when' do
-    it 'have a name and a profile' do
-      Profile.create(description: 'I am Super Man ...', name: 'Super Man')
+    it 'have all fields' do
+        batman = User.create(
+        email: 'batman@gothan.io',
+        password: 'Senha1234'
+      )
+      Profile.create(
+        description: 'I am not bruce ...',
+        name: 'Batman',
+        user: batman
+      )
       expect(Profile.count).to eql(1)
     end
   end

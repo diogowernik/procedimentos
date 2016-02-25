@@ -29,7 +29,7 @@ set relation user and profile and valitations (in models), can be has_one or has
 **app/models/user.rb**
 
 ```ruby
-has_one :profile
+has_many :profile
 ```
 
 **app/models/profile.rb**
