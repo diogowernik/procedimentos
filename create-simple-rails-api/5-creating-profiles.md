@@ -7,13 +7,12 @@ For profile this are the fields created for the moment:
 ```ruby
 name:string
 description:text
-site_url:string
-state:string
+is_published:boolean
 ```
 
 **terminal**
 
-    rails generate model profile name:string description:text site_url:string state:string
+    rails generate model profile name:string description:text is_published:boolean
 
     rails g scaffold_controller Profile
 
@@ -54,8 +53,8 @@ resources :profiles
 find:
 
 ```ruby
-  def set_profile
-    @profile = Profile.find(params[:id])
+  def profile_params
+    params[:profile]
   end
 ```
 
@@ -71,7 +70,7 @@ And change for:
   end
 ```
 
-**spec/controllers/profile_controller.rb**
+**spec/controllers/profile_controller_spec.rb**
 
 delete because is for rails full application, not needed for only rails-api:
 

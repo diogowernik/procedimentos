@@ -57,14 +57,14 @@ And change the def set params:
 find:
 
 ```ruby
-  def set_publication
-    @publication = Publication.find(params[:id])
+  def publication_params
+    params[:publication]
   end
 ```
 And change for:  
 
 ```ruby
-  def set_publication
+  def publication_params
     params.require(:publication).permit(
       :title,
       :description,
