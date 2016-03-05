@@ -77,5 +77,11 @@ OS generated files
     ehthumbs.db
     Thumbs.db
 
-----
+#### Issue
+
+**insufficient permission for adding an object to repository database .git/objects**
+
+    cd .git/objects
+    ls -al
+    sudo chown -R yourname:yourgroup *
 
