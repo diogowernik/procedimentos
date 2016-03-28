@@ -85,3 +85,15 @@ OS generated files
     ls -al
     sudo chown -R yourname:yourgroup *
 
+**remove folder cache**
+
+    git rm -r --cached some-directory
+
+**force remove file**
+
+    git rm -f sample.txt
+
+**create new branch**
+
+    git checkout -b feature/users_controller
+
