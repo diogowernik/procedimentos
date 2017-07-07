@@ -1,7 +1,7 @@
 ### Utilizamos
 
 
-**OK**
+**Base - OK - Verificar dentro do base o que precisa ou não**
 
 I, [2017-07-07T19:20:14.513610 #1]  INFO -- : Writing /usr/share/nginx/app/public/assets/base-1e8824eab011d34c79a5bb0aae34d0877434ed7d2d2886af4ca3d320fa8b0d98.js
 I, [2017-07-07T19:20:14.533093 #1]  INFO -- : Writing /usr/share/nginx/app/public/assets/base-1e8824eab011d34c79a5bb0aae34d0877434ed7d2d2886af4ca3d320fa8b0d98.js.gz
